@@ -1,98 +1,80 @@
 (function () {
-    'use strict';
+  "use strict";
 
-    module.exports = {
-        addUser: addUser,
-        getUsers: getUsers,
-        getUserById: getUserById,
-        modifyUser: modifyUser,
-        removeUser: removeUser
-    };
-   
-    var UserService = require('./user.module')().UserService;
+  module.exports = {
+    addUser: addUser,
+    getUsers: getUsers,
+    getUserById: getUserById,
+    modifyUser: modifyUser,
+    removeUser: removeUser,
+  };
 
-    function addUser(req, res, next) {
-        UserService.createUser(req.body)
-            .then(success)
-            .catch(failure);
+  var UserService = require("./user.module")().UserService;
 
-        function success(data) {
-            req.response = data;
-            next();
-        }
+  function addUser(req, res, next) {
+    UserService.createUser(req.body).then(success).catch(failure);
 
-        function failure(error) {
-            next(error);
-        }
-
+    function success(data) {
+      req.response = data;
+      next();
     }
 
-    function getUsers(req, res, next) {
+    function failure(error) {
+      next(error);
+    }
+  }
 
-        UserService.fetchUsers()
-            .then(success)
-            .catch(failure);
+  function getUsers(req, res, next) {
+    UserService.fetchUsers().then(success).catch(failure);
 
-        function success(data) {
-            req.response = data;
-            next();
-        }
-
-        function failure(err) {
-            next(err);
-        }
-
+    function success(data) {
+      req.response = data;
+      next();
     }
 
-    function getUserById(req, res, next) {
+    function failure(err) {
+      next(err);
+    }
+  }
 
-        UserService.fetchUserById(req.params.userId)
-            .then(success)
-            .catch(failure);
+  function getUserById(req, res, next) {
+    UserService.fetchUserById(req.params.userId).then(success).catch(failure);
 
-        function success(data) {
-            req.response = data;
-            next();
-        }
-
-        function failure(err) {
-            next(err);
-        }
-
+    function success(data) {
+      req.response = data;
+      next();
     }
 
-function modifyUser(req, res, next) {
-        UserService.updateUser(req.params.userId, req.body)
-            .then(success)
-            .catch(error);
+    function failure(err) {
+      next(err);
+    }
+  }
 
-        function success(data) {
-            req.response = data;
-            next();
-        }
+  function modifyUser(req, res, next) {
+    UserService.updateUser(req.params.userId, req.body)
+      .then(success)
+      .catch(error);
 
-        function error(err) {
-            next(err);
-        }
+    function success(data) {
+      req.response = data;
+      next();
     }
 
-    function removeUser(req, res, next) {
+    function error(err) {
+      next(err);
+    }
+  }
 
-        UserService.deleteUser(req.params.userId)
-            .then(success)
-            .catch(error);
+  function removeUser(req, res, next) {
+    UserService.deleteUser(req.params.userId).then(success).catch(error);
 
-        function success(data) {
-            req.response = data;
-            next();
-        }
-
-        function error(err) {
-            next(err);
-        }
-
+    function success(data) {
+      req.response = data;
+      next();
     }
 
-
-
+    function error(err) {
+      next(err);
+    }
+  }
 })();
