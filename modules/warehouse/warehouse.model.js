@@ -12,11 +12,10 @@
             type: String,
             required: true
         },
+        warehouseId: {
+            type: Number,
+        },
         capacity: Number,
-        products: [{
-            type: Schema.Types.ObjectId,
-            ref: 'Product'
-        }]
     });
 
     module.exports = mongoose.model('warehouses', WarehouseSchema);

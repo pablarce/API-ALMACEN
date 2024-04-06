@@ -10,7 +10,7 @@
         },
         description: String,
         quantity: Number,
-        warehouse: {
+        warehouseId: {
             type: Schema.Types.ObjectId,
             ref: 'Warehouse'
         }
