@@ -4,7 +4,7 @@
     module.exports = {
         addDistributor: addDistributor,
         getDistributors: getDistributors,
-        getDistributorsById: getDistributorsById,
+        getDistributorById: getDistributorById,
         modifyDistributor: modifyDistributor,
         removeDistributor: removeDistributor
     };

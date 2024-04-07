@@ -3,7 +3,7 @@
 
     module.exports = {
         createDistributor: createDistributor,
-        fetchDistributors: fetchDIstributors,
+        fetchDistributors: fetchDistributors,
         fetchDistributorById: fetchDistributorById,
         updateDistributor: updateDistributor,
         deleteDistributor: deleteDistributor

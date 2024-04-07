@@ -5,10 +5,10 @@
 
     function init() {
         return {
-            DistributorController: require('./userdistributor.controller'),
-            DistributorMiddleware: require('./userdistributor.middleware'),
-            DistributorService: require('./userdistributor.service'),
-            DistributorModel: require('./userdistributor.model')
+            DistributorController: require('./distributor.controller'),
+            DistributorMiddleware: require('./distributor.middleware'),
+            DistributorService: require('./distributor.service'),
+            DistributorModel: require('./distributor.model')
         }
     }
 
