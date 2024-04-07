@@ -1,5 +1,3 @@
-// insertClients.js
-
 const mongoose = require("mongoose");
 const Client = require("./modules/clients/clients.model");
 const clientsData = require("./Data/ClientsData");
