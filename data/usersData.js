@@ -1,3 +1,5 @@
+const bcrypt = require("bcrypt");
+
 const usersData = [
   {
     firstName: "Juan",
@@ -121,4 +123,11 @@ const usersData = [
   },
 ];
 
-module.exports = usersData;
+const hashedUsersData = usersData.map((user) => {
+  return {
+    ...user,
+    password: bcrypt.hashSync(user.password, bcrypt.genSaltSync(10)),
+  };
+});
+
+module.exports = hashedUsersData;
