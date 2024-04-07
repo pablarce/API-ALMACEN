@@ -4,6 +4,15 @@ const mongoose = require("mongoose");
 const Client = require("./modules/clients/clients.model");
 const clientsData = require("./Data/ClientsData");
 
+const Sale = require("./modules/sales/sales.model");
+const salesData = require("./Data/SalesData");
+
+const Purchase = require("./modules/purchases/purchases.model");
+const purchaseData = require("./Data/PurchasesData");
+
+const Supplier = require("./modules/suppliers/suppliers.model");
+const suppliersData = require("./Data/SuppliersData");
+
 // Conectar a la base de datos MongoDB
 mongoose.connect("mongodb://127.0.0.1:27017/API-ALMACEN", {
   useNewUrlParser: true,
@@ -21,6 +30,7 @@ async function insertData() {
   try {
     // Insertar los datos de los clientes en la base de datos
     await Client.insertMany(clientsData);
+
 
     console.log("Client data inserted into the database successfully!");
   } catch (error) {
