@@ -8,10 +8,14 @@ var app = express();
 
 var MongoDBUtil = require("./modules/mongodb/mongodb.module").MongoDBUtil;
 var UserController = require("./modules/user/user.module")().UserController;
-var ClientController = require("./modules/clients/clients.module")()
-  .ClientController;
+var ClientController = require("./modules/clients/clients.module")().ClientController;
+var PurchaseController = require('./modules/purchase/purchase.module')().PurchaseController;
+var SaleController = require('./modules/sale/sale.module')().SaleController;
+var SupplierController = require('./modules/supplier/supplier.module')().SupplierController;
 
 app.use(logger("dev"));
+
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -22,7 +26,11 @@ MongoDBUtil.init();
 const insertDataAtStart = require("./InsertData");
 insertDataAtStart();
 
-app.use("/users", UserController);
+app.use('/users', UserController);
+app.use('/purchases', PurchaseController);
+app.use('/sales', SaleController);
+app.use('/suppliers', SupplierController);
+
 app.use("/clients", ClientController);
 
 app.get("/", function (req, res) {
