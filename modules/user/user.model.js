@@ -14,7 +14,7 @@ var UserSchema = new Schema({
   role: {
     type: String,
     required: true,
-    enum: ["client", "administrator"],
+    enum: ["client", "employee"],
   },
   email: {
     type: String,
