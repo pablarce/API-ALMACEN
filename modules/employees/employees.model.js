@@ -15,20 +15,19 @@
     role: {
       type: String,
       required: true,
-      enum: ["client", "administrator"],
     },
     email: {
       type: String,
       required: true,
     },
-    username: {
-      type: String,
+    phoneNumber: {
+      type: Number,
       required: true,
     },
-    organization: {
-      type: String,
-      required: true,
-    },
+    address: String,
+    city: String,
+    state: String,
+    zipCode: String,
     country: String,
   });
 

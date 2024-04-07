@@ -7,8 +7,9 @@ var logger = require("morgan");
 var app = express();
 
 var MongoDBUtil = require("./modules/mongodb/mongodb.module").MongoDBUtil;
-
 var UserController = require("./modules/user/user.module")().UserController;
+var ClientController = require("./modules/clients/clients.module")()
+  .ClientController;
 
 app.use(logger("dev"));
 app.use(express.json());
@@ -19,6 +20,8 @@ app.set("view engine", "ejs");
 MongoDBUtil.init();
 
 app.use("/users", UserController);
+
+app.use("/clients", ClientController);
 
 app.get("/", function (req, res) {
   var pkg = require(path.join(__dirname, "package.json"));

@@ -3,34 +3,39 @@
 
   var Schema = mongoose.Schema;
 
-  var UserSchema = new Schema({
-    firstName: {
+  var ClientSchema = new Schema({
+    CompanyName: {
       type: String,
       required: true,
     },
-    lastName: {
+    ContactPerson: {
       type: String,
       required: true,
     },
-    role: {
+    Email: {
       type: String,
-      required: true,
-      enum: ["client", "administrator"],
-    },
-    email: {
-      type: String,
+      unique: true,
       required: true,
     },
-    username: {
+    Phone: {
       type: String,
       required: true,
     },
-    organization: {
+    Address: {
       type: String,
       required: true,
     },
-    country: String,
+    ClientType: {
+      type: String,
+      enum: ["Individual", "Organization", "Affiliate"],
+      default: "Individual",
+      required: true,
+    },
+    RegistrationDate: {
+      type: Date,
+      default: Date.now,
+    },
   });
 
-  module.exports = mongoose.model("users", UserSchema);
+  module.exports = mongoose.model("Client", ClientSchema);
 })();
