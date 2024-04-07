@@ -1,4 +1,4 @@
-[
+const warehouseData=[
     {
         "name": "Almacén CLE",
         "location": "Salamanca",
@@ -35,5 +35,6 @@
         "warehouseId": "93741",
         "capacity": 1000
     }
- ]
+ ];
+ module.exports = warehouseData;
  

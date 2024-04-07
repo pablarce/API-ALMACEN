@@ -1,4 +1,4 @@
-[
+const equipmentData=[
     {
         "name": "Montacargas",
         "description": "Máquina utilizada para levantar y transportar cargas pesadas",
@@ -29,4 +29,5 @@
         "quantity": 100,
         "warehouseId": ["19283", "14320","89001","45902","22400","93741"]
     }
-]
+];
+module.exports = equipmentData;

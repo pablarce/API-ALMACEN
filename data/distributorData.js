@@ -1,4 +1,4 @@
-[
+const distributorData=[
     {
         "name": "Distribuidora Internacional de Suministros Industriales",
         "contactPerson": "Ana López",
@@ -89,4 +89,5 @@
         "city": "Málaga",
         "country": "España"
     }
-]
+];
+module.exports = distributorData;
