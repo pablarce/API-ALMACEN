@@ -10,8 +10,14 @@ mongoose.connect("mongodb://127.0.0.1:27017/API-ALMACEN", {
   useUnifiedTopology: true,
 });
 
-// Función para insertar los datos de los clientes en la base de datos
-async function insertClients() {
+// Función para verificar si la base de datos está vacía
+async function isDatabaseEmpty() {
+  const count = await Client.countDocuments();
+  return count === 0;
+}
+
+// Método para insertar los datos de los clientes en la base de datos
+async function insertData() {
   try {
     // Insertar los datos de los clientes en la base de datos
     await Client.insertMany(clientsData);
@@ -25,5 +31,20 @@ async function insertClients() {
   }
 }
 
-// Ejecutar la función para insertar los datos de los clientes
-insertClients();
+// Método para insertar los datos de los clientes al inicio si la base de datos está vacía
+async function insertDataAtStart() {
+  try {
+    const isEmpty = await isDatabaseEmpty();
+    if (isEmpty) {
+      console.log("Database is empty, inserting client data...");
+      await insertData();
+    } else {
+      console.log("Database is not empty, skipping client data insertion.");
+    }
+  } catch (error) {
+    console.error("Error checking database status:", error);
+  }
+}
+
+// Exportar el método insertDataAtStart
+module.exports = insertDataAtStart;

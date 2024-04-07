@@ -19,8 +19,10 @@ app.set("view engine", "ejs");
 
 MongoDBUtil.init();
 
-app.use("/users", UserController);
+const insertDataAtStart = require("./InsertData");
+insertDataAtStart();
 
+app.use("/users", UserController);
 app.use("/clients", ClientController);
 
 app.get("/", function (req, res) {
