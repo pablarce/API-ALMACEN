@@ -29,7 +29,7 @@
 
     function getSuppliers(req, res, next) {
 
-        SupplierService.fetchUsers()
+        SupplierService.fetchSuppliers()
             .then(success)
             .catch(failure);
 

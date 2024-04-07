@@ -24,13 +24,13 @@
             .exec();
     }
 
-    function updateSale(userId, user) {
+    function updateSale(saleId, sale) {
         return SaleModel
             .findByIdAndUpdate(saleId, sale, {new: true})
             .exec();
     }
 
-    function deleteUser(saleId) {
+    function deleteSale(saleId) {
         return SaleModel
             .findByIdAndRemove(saleId)
             .exec();

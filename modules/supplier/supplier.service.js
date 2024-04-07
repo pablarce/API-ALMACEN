@@ -3,7 +3,7 @@
 
     module.exports = {
         createSupplier: createSupplier,
-        fetchSupplier: fetchSuppliers,
+        fetchSuppliers: fetchSuppliers,
         fetchSupplierById: fetchSupplierById,
         updateSupplier: updateSupplier,
         deleteSupplier: deleteSupplier

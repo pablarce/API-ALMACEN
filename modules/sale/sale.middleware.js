@@ -29,7 +29,7 @@
 
     function getSales(req, res, next) {
 
-        SaleService.fetchUsers()
+        SaleService.fetchSales()
             .then(success)
             .catch(failure);
 
@@ -78,7 +78,7 @@ function modifySale(req, res, next) {
 
     function removeSale(req, res, next) {
 
-        SaleService.deleteSale(req.params.userId)
+        SaleService.deleteSale(req.params.saleId)
             .then(success)
             .catch(error);
 
