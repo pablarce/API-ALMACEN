@@ -1,18 +1,18 @@
 (function () {
   "use strict";
 
+  var Client = require("./clients.model");
+
   module.exports = {
-    addUser: addUser,
-    getUsers: getUsers,
-    getUserById: getUserById,
-    modifyUser: modifyUser,
-    removeUser: removeUser,
+    addClient: addClient,
+    getClients: getClients,
+    getClientById: getClientById,
+    modifyClient: modifyClient,
+    removeClient: removeClient,
   };
 
-  var UserService = require("./user.module")().UserService;
-
-  function addUser(req, res, next) {
-    UserService.createUser(req.body).then(success).catch(failure);
+  function addClient(req, res, next) {
+    Client.create(req.body).then(success).catch(failure);
 
     function success(data) {
       req.response = data;
@@ -24,8 +24,8 @@
     }
   }
 
-  function getUsers(req, res, next) {
-    UserService.fetchUsers().then(success).catch(failure);
+  function getClients(req, res, next) {
+    Client.find({}).then(success).catch(failure);
 
     function success(data) {
       req.response = data;
@@ -37,8 +37,8 @@
     }
   }
 
-  function getUserById(req, res, next) {
-    UserService.fetchUserById(req.params.userId).then(success).catch(failure);
+  function getClientById(req, res, next) {
+    Client.findById(req.params.clientId).then(success).catch(failure);
 
     function success(data) {
       req.response = data;
@@ -50,8 +50,8 @@
     }
   }
 
-  function modifyUser(req, res, next) {
-    UserService.updateUser(req.params.userId, req.body)
+  function modifyClient(req, res, next) {
+    Client.findByIdAndUpdate(req.params.clientId, req.body, { new: true })
       .then(success)
       .catch(error);
 
@@ -65,8 +65,8 @@
     }
   }
 
-  function removeUser(req, res, next) {
-    UserService.deleteUser(req.params.userId).then(success).catch(error);
+  function removeClient(req, res, next) {
+    Client.findByIdAndDelete(req.params.clientId).then(success).catch(error);
 
     function success(data) {
       req.response = data;

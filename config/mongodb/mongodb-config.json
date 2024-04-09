@@ -1,7 +1,7 @@
 {
   "mongodb": {
     "server": "127.0.0.1:27017",
-    "database": "ApiExpress",
+    "database": "API-ALMACEN",
     "user": null,
     "password": null
   }

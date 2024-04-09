@@ -1,0 +1,68 @@
+const clientsData = [
+  {
+    CompanyName: "Company A",
+    ContactPerson: "John Doe",
+    Email: "john.doe@example.com",
+    Phone: "+1234567890",
+    Address: "123 Main St",
+    ClientType: "Individual",
+  },
+  {
+    CompanyName: "Company B",
+    ContactPerson: "Jane Smith",
+    Email: "jane.smith@example.com",
+    Phone: "+0987654321",
+    Address: "456 Elm St",
+    ClientType: "Organization",
+  },
+  {
+    CompanyName: "Company C",
+    ContactPerson: "Alice Johnson",
+    Email: "alice.johnson@example.com",
+    Phone: "+9876543210",
+    Address: "789 Oak St",
+    ClientType: "Individual",
+  },
+  {
+    CompanyName: "Company D",
+    ContactPerson: "Bob Anderson",
+    Email: "bob.anderson@example.com",
+    Phone: "+1357924680",
+    Address: "987 Pine St",
+    ClientType: "Organization",
+  },
+  {
+    CompanyName: "Company E",
+    ContactPerson: "Michael Brown",
+    Email: "michael.brown@example.com",
+    Phone: "+2468013579",
+    Address: "246 Maple St",
+    ClientType: "Individual",
+  },
+  {
+    CompanyName: "Company F",
+    ContactPerson: "Emily Wilson",
+    Email: "emily.wilson@example.com",
+    Phone: "+9876543210",
+    Address: "753 Cherry St",
+    ClientType: "Organization",
+  },
+  {
+    CompanyName: "Company G",
+    ContactPerson: "David Lee",
+    Email: "david.lee@example.com",
+    Phone: "+3692581470",
+    Address: "369 Walnut St",
+    ClientType: "Individual",
+  },
+  {
+    CompanyName: "Company H",
+    ContactPerson: "Jessica Garcia",
+    Email: "jessica.garcia@example.com",
+    Phone: "+9517534682",
+    Address: "159 Cedar St",
+    ClientType: "Organization",
+  },
+];
+
+module.exports = clientsData;
