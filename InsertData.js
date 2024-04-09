@@ -5,6 +5,9 @@ const User = require("./modules/user/user.model");
 const clientsData = require("./data/ClientsData");
 const usersData = require("./data/usersData");
 
+const Employee = require("./modules/employees/employees.model");
+const employeesData = require("./data/EmployeesData");
+
 const Sale = require("./modules/sale/sale.model");
 const salesData = require("./data/SalesData");
 
@@ -47,6 +50,7 @@ async function insertData() {
     await Distributor.insertMany(distributorData);
     await Equipment.insertMany(equipmentData);
     await Warehouse.insertMany(warehouseData);
+    await Employee.insertMany(employeesData);
   } catch (error) {
     console.error("Error inserting test data into the database:", error);
   } finally {

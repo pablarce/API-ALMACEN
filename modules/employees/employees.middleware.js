@@ -2,17 +2,17 @@
   "use strict";
 
   module.exports = {
-    addUser: addUser,
-    getUsers: getUsers,
-    getUserById: getUserById,
-    modifyUser: modifyUser,
-    removeUser: removeUser,
+    addEmployee: addEmployee,
+    getEmployees: getEmployees,
+    getEmployeeById: getEmployeeById,
+    modifyEmployee: modifyEmployee,
+    removeEmployee: removeEmployee,
   };
 
-  var UserService = require("./employees.module")().UserService;
+  var EmployeeService = require("./employees.module")().EmployeeService;
 
-  function addUser(req, res, next) {
-    UserService.createUser(req.body).then(success).catch(failure);
+  function addEmployee(req, res, next) {
+    EmployeeService.createEmployee(req.body).then(success).catch(failure);
 
     function success(data) {
       req.response = data;
@@ -24,8 +24,8 @@
     }
   }
 
-  function getUsers(req, res, next) {
-    UserService.fetchUsers().then(success).catch(failure);
+  function getEmployees(req, res, next) {
+    EmployeeService.fetchEmployees().then(success).catch(failure);
 
     function success(data) {
       req.response = data;
@@ -37,8 +37,10 @@
     }
   }
 
-  function getUserById(req, res, next) {
-    UserService.fetchUserById(req.params.userId).then(success).catch(failure);
+  function getEmployeeById(req, res, next) {
+    EmployeeService.fetchEmployeeById(req.params.employeeId)
+      .then(success)
+      .catch(failure);
 
     function success(data) {
       req.response = data;
@@ -50,8 +52,8 @@
     }
   }
 
-  function modifyUser(req, res, next) {
-    UserService.updateUser(req.params.userId, req.body)
+  function modifyEmployee(req, res, next) {
+    EmployeeService.updateEmployee(req.params.employeeId, req.body)
       .then(success)
       .catch(error);
 
@@ -65,8 +67,10 @@
     }
   }
 
-  function removeUser(req, res, next) {
-    UserService.deleteUser(req.params.userId).then(success).catch(error);
+  function removeEmployee(req, res, next) {
+    EmployeeService.deleteEmployee(req.params.employeeId)
+      .then(success)
+      .catch(error);
 
     function success(data) {
       req.response = data;

@@ -8,16 +8,23 @@ var app = express();
 
 var MongoDBUtil = require("./modules/mongodb/mongodb.module").MongoDBUtil;
 var UserController = require("./modules/user/user.module")().UserController;
-var ClientController = require("./modules/clients/clients.module")().ClientController;
-var PurchaseController = require('./modules/purchase/purchase.module')().PurchaseController;
-var SaleController = require('./modules/sale/sale.module')().SaleController;
-var SupplierController = require('./modules/supplier/supplier.module')().SupplierController;
-var DistributorController = require('./modules/distributor/distributor.module')().DistributorController;
-var EquipmentController = require('./modules/equipment/equipment.module')().EquipmentController;
-var WarehouseController = require('./modules/warehouse/warehouse.module')().WarehouseController; 
+var ClientController = require("./modules/clients/clients.module")()
+  .ClientController;
+var PurchaseController = require("./modules/purchase/purchase.module")()
+  .PurchaseController;
+var SaleController = require("./modules/sale/sale.module")().SaleController;
+var SupplierController = require("./modules/supplier/supplier.module")()
+  .SupplierController;
+var DistributorController =
+  require("./modules/distributor/distributor.module")().DistributorController;
+var EquipmentController = require("./modules/equipment/equipment.module")()
+  .EquipmentController;
+var WarehouseController = require("./modules/warehouse/warehouse.module")()
+  .WarehouseController;
+var EmployeeController = require("./modules/employees/employees.module")()
+  .EmployeeController;
 
 app.use(logger("dev"));
-
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -29,14 +36,15 @@ MongoDBUtil.init();
 const insertDataAtStart = require("./InsertData");
 insertDataAtStart();
 
-app.use('/users', UserController);
-app.use('/purchases', PurchaseController);
-app.use('/sales', SaleController);
-app.use('/suppliers', SupplierController);
+app.use("/users", UserController);
+app.use("/purchases", PurchaseController);
+app.use("/sales", SaleController);
+app.use("/suppliers", SupplierController);
 app.use("/clients", ClientController);
 app.use("/distributors", DistributorController);
 app.use("/equipments", EquipmentController);
 app.use("/warehouses", WarehouseController);
+app.use("/employees", EmployeeController);
 
 app.get("/", function (req, res) {
   var pkg = require(path.join(__dirname, "package.json"));
