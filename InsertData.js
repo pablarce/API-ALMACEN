@@ -14,6 +14,15 @@ const purchasesData = require("./data/PurchasesData");
 const Supplier = require("./modules/supplier/supplier.model");
 const suppliersData = require("./data/SuppliersData");
 
+const Distributor = require("./modules/distributor/distributor.model");
+const distributorData = require("./data/distributorData");
+
+const Equipment = require("./modules/equipment/equipment.model");
+const equipmentData = require("./data/equipmentData");
+
+const Warehouse = require("./modules/warehouse/warehouse.model");
+const warehouseData = require("./data/warehouseData");
+
 // Conectar a la base de datos MongoDB
 mongoose.connect("mongodb://127.0.0.1:27017/API-ALMACEN", {
   useNewUrlParser: true,
@@ -35,6 +44,9 @@ async function insertData() {
     await Supplier.insertMany(suppliersData);
     await Purchase.insertMany(purchasesData);
     await User.insertMany(usersData);
+    await Distributor.insertMany(distributorData);
+    await Equipment.insertMany(equipmentData);
+    await Warehouse.insertMany(warehouseData);
   } catch (error) {
     console.error("Error inserting test data into the database:", error);
   } finally {

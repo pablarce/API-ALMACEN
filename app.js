@@ -12,6 +12,9 @@ var ClientController = require("./modules/clients/clients.module")().ClientContr
 var PurchaseController = require('./modules/purchase/purchase.module')().PurchaseController;
 var SaleController = require('./modules/sale/sale.module')().SaleController;
 var SupplierController = require('./modules/supplier/supplier.module')().SupplierController;
+var DistributorController = require('./modules/distributor/distributor.module')().DistributorController;
+var EquipmentController = require('./modules/equipment/equipment.module')().EquipmentController;
+var WarehouseController = require('./modules/warehouse/warehouse.module')().WarehouseController; 
 
 app.use(logger("dev"));
 
@@ -30,8 +33,10 @@ app.use('/users', UserController);
 app.use('/purchases', PurchaseController);
 app.use('/sales', SaleController);
 app.use('/suppliers', SupplierController);
-
 app.use("/clients", ClientController);
+app.use("/distributors", DistributorController);
+app.use("/equipments", EquipmentController);
+app.use("/warehouses", WarehouseController);
 
 app.get("/", function (req, res) {
   var pkg = require(path.join(__dirname, "package.json"));

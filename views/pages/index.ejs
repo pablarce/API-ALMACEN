@@ -3,19 +3,63 @@
 <head>
     <%- include('../partials/head'); %>
 </head>
-<body class="container">
+<body>
 
-<header>
-    <%- include('../partials/header'); %>
+<header class="py-5" style="background-color: #2980b9; color: white;">
+    <div class="container text-center">
+        <h1 class="display-4 mb-3">API Almacen</h1>
+        <p class="lead">Facilitating warehouse management worldwide</p>
+    </div>
 </header>
 
-<main>
-    <div class="jumbotron">
-        <h1>Ingeniería de Software II: </h1>
-         <h1>Realmente ¿Cómo funciona JavaScript?</h1>
-        <p>Ahora podemos utilizar EJS como motor de vistas, pero también podríamos utilizar Jade</p>
-    </div>
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #1a5276;">
+  <div class="container">
+    <a class="navbar-brand" href="/">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="/about">About Us</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/documentation">Documentation</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/contact">Contact</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/community-forum">Community Forum</a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="container mt-5">
+    <div class="card border-0 shadow">
+        <div class="card-body">
+            <hr class="my-4">
+            <h2 class="text-center mb-3">Collections:</h2>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Users: Owners or administrators who can log in and manage the system.</li>
+                <li class="list-group-item">Clients: Customers or clients who purchase products from the warehouse.</li>
+                <li class="list-group-item">Employees: Workers in the warehouse.</li>
+                <li class="list-group-item">Products: Items stocked in the warehouse.</li>
+                <li class="list-group-item">Inventory: A detailed record of the quantity of products in stock in each warehouse.</li>
+                <li class="list-group-item">Product Categories: Organizational groups for products.</li>
+                <li class="list-group-item">Supplier: Companies or individuals who supply products to the warehouse.</li>
+                <li class="list-group-item">Purchase: Records of purchases made from suppliers.</li>
+                <li class="list-group-item">Sale: Records of products sold to clients.</li>
+                <li class="list-group-item">Distributor: Entities responsible for distributing products to clients or warehouses.</li>
+                <li class="list-group-item">Warehouse: Locations where products are stored.</li>
+                <li class="list-group-item">Equipment: Tools or machinery used in the warehouse.</li>
+            </ul>
+        </div>
+    </div>
 </main>
 
 <footer>
