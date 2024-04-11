@@ -5,14 +5,14 @@ const User = require("./modules/user/user.model");
 const clientsData = require("./data/ClientsData");
 const usersData = require("./data/usersData");
 
-const Sale = require("./modules/sales/sales.model");
+const Sale = require("./modules/sale/sale.model");
 const salesData = require("./Data/SalesData");
 
-const Purchase = require("./modules/purchases/purchases.model");
+const Purchase = require("./modules/purchase/purchase.model");
 const purchaseData = require("./Data/PurchasesData");
 
-const Supplier = require("./modules/suppliers/suppliers.model");
-const suppliersData = require("./Data/SuppliersData");
+const Supplier = require("./modules/supplier/supplier.model");
+const supplierData = require("./Data/SuppliersData");
 
 // Conectar a la base de datos MongoDB
 mongoose.connect("mongodb://127.0.0.1:27017/API-ALMACEN", {
