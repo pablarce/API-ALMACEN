@@ -1,10 +1,12 @@
 var createError = require("http-errors");
+const cors = require("cors");
 var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 
 var app = express();
+app.use(cors());
 
 var MongoDBUtil = require("./modules/mongodb/mongodb.module").MongoDBUtil;
 var UserController = require("./modules/user/user.module")().UserController;
@@ -23,6 +25,8 @@ var WarehouseController = require("./modules/warehouse/warehouse.module")()
   .WarehouseController;
 var EmployeeController = require("./modules/employees/employees.module")()
   .EmployeeController;
+var ProductController = require("./modules/product/product.module")()
+  .ProductController;
 
 app.use(logger("dev"));
 
@@ -45,6 +49,7 @@ app.use("/distributors", DistributorController);
 app.use("/equipments", EquipmentController);
 app.use("/warehouses", WarehouseController);
 app.use("/employees", EmployeeController);
+app.use("/products", ProductController);
 
 app.get("/", function (req, res) {
   var pkg = require(path.join(__dirname, "package.json"));
