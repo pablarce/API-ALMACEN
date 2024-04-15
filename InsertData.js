@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 const Client = require("./modules/clients/clients.model");
-const User = require("./modules/user/user.model");
-
 const clientsData = require("./data/ClientsData");
+
+const User = require("./modules/user/user.model");
 const usersData = require("./data/usersData");
 
 const Employee = require("./modules/employees/employees.model");
@@ -25,6 +25,9 @@ const equipmentData = require("./data/equipmentData");
 
 const Warehouse = require("./modules/warehouse/warehouse.model");
 const warehouseData = require("./data/warehouseData");
+
+const Product = require("./modules/product/product.model");
+const productData = require("./data/ProductData");
 
 // Conectar a la base de datos MongoDB
 mongoose.connect("mongodb://127.0.0.1:27017/API-ALMACEN", {
@@ -51,6 +54,7 @@ async function insertData() {
     await Equipment.insertMany(equipmentData);
     await Warehouse.insertMany(warehouseData);
     await Employee.insertMany(employeesData);
+    await Product.insertMany(productData);
   } catch (error) {
     console.error("Error inserting test data into the database:", error);
   } finally {
