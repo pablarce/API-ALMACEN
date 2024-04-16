@@ -5,10 +5,10 @@
 
   function init() {
     return {
-      UserController: require("./employees.controller"),
-      UserMiddleware: require("./employees.middleware"),
-      UserService: require("./employees.service"),
-      UserModel: require("./employees.model"),
+      EmployeeController: require("./employees.controller"),
+      EmployeeMiddleware: require("./employees.middleware"),
+      EmployeeService: require("./employees.service"),
+      EmployeeModel: require("./employees.model"),
     };
   }
 })();

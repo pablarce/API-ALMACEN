@@ -2,17 +2,17 @@
   "use strict";
 
   module.exports = {
-    addEmployee: addEmployee,
-    getEmployees: getEmployees,
-    getEmployeeById: getEmployeeById,
-    modifyEmployee: modifyEmployee,
-    removeEmployee: removeEmployee,
+    addProduct: addProduct,
+    getProducts: getProducts,
+    getProductById: getProductById,
+    modifyProduct: modifyProduct,
+    removeProduct: removeProduct,
   };
 
-  var EmployeeService = require("./employees.module")().EmployeeService;
+  var ProductService = require("./product.module")().ProductService;
 
-  function addEmployee(req, res, next) {
-    EmployeeService.createEmployee(req.body).then(success).catch(failure);
+  function addProduct(req, res, next) {
+    ProductService.createProduct(req.body).then(success).catch(failure);
 
     function success(data) {
       req.response = data;
@@ -24,8 +24,8 @@
     }
   }
 
-  function getEmployees(req, res, next) {
-    EmployeeService.fetchEmployees().then(success).catch(failure);
+  function getProducts(req, res, next) {
+    ProductService.fetchProducts().then(success).catch(failure);
 
     function success(data) {
       req.response = data;
@@ -37,8 +37,8 @@
     }
   }
 
-  function getEmployeeById(req, res, next) {
-    EmployeeService.fetchEmployeeById(req.params.employeeId)
+  function getProductById(req, res, next) {
+    ProductService.fetchProductById(req.params.productId)
       .then(success)
       .catch(failure);
 
@@ -52,8 +52,8 @@
     }
   }
 
-  function modifyEmployee(req, res, next) {
-    EmployeeService.updateEmployee(req.params.employeeId, req.body)
+  function modifyProduct(req, res, next) {
+    ProductService.updateProduct(req.params.productId, req.body)
       .then(success)
       .catch(error);
 
@@ -67,8 +67,8 @@
     }
   }
 
-  function removeEmployee(req, res, next) {
-    EmployeeService.deleteEmployee(req.params.employeeId)
+  function removeProduct(req, res, next) {
+    ProductService.deleteProduct(req.params.productId)
       .then(success)
       .catch(error);
 

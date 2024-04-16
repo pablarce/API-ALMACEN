@@ -3,7 +3,7 @@
 
   var Schema = mongoose.Schema;
 
-  var UserSchema = new Schema({
+  var EmployeeSchema = new Schema({
     firstName: {
       type: String,
       required: true,
@@ -21,7 +21,7 @@
       required: true,
     },
     phoneNumber: {
-      type: Number,
+      type: String,
       required: true,
     },
     address: String,
@@ -29,7 +29,18 @@
     state: String,
     zipCode: String,
     country: String,
+    hireDate: {
+      type: Date,
+      required: true,
+    },
+    workingHours: String,
+    salary: {
+      type: Number,
+      required: true,
+    },
+    contractType: String,
+    education: [String],
   });
 
-  module.exports = mongoose.model("users", UserSchema);
+  module.exports = mongoose.model("employees", EmployeeSchema);
 })();
