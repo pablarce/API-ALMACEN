@@ -2,100 +2,84 @@
 <html lang="en">
   <head>
     <%- include('../partials/head'); %>
-  </head>
-  <body>
-    <header class="py-5" style="background-color: #2980b9; color: white">
-      <div class="container text-center">
-        <h1 class="display-4 mb-3">API Almacen</h1>
+</head>
+<body>
+
+<header class="py-5" style="background-color: #2980b9; color: white;">
+    <div class="container text-center">
+        <h1 class="display-4 mb-4">API Almacen</h1>
         <p class="lead">Facilitating warehouse management worldwide</p>
       </div>
     </header>
 
-    <nav
-      class="navbar navbar-expand-lg navbar-dark"
-      style="background-color: #1a5276"
-    >
-      <div class="container">
-        <a class="navbar-brand" href="/">Home</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #124565;">
+  <div class="container">
+    <a class="navbar-brand" href="/users">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="/about">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/documentation">Documentation</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/contact">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/community-forum">Community Forum</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="/users">Users</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/clients">Clients</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/employees">Employees</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/products">Products</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/inventories">Inventory</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/productCategories">Product Categories</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/suppliers">Suppliers</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/purchases">Purchases</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/sales">Sales</a>
+        <li class="nav-item">
+            <a class="nav-link" href="/distributors">Distributors</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/equipments">Equipments</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/warehouses">Warehouses</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
     <main class="container mt-5">
       <div class="card border-0 shadow">
         <div class="card-body">
-          <hr class="my-4" />
-          <h2 class="text-center mb-3">Collections:</h2>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-              Users: Owners or administrators who can log in and manage the
-              system.
-            </li>
-            <li class="list-group-item">
-              Clients: Customers or clients who purchase products from the
-              warehouse.
-            </li>
-            <li class="list-group-item">
-              Employees: Workers in the warehouse.
-            </li>
-            <li class="list-group-item">
-              Products: Items stocked in the warehouse.
-            </li>
-            <li class="list-group-item">
-              Inventory: A detailed record of the quantity of products in stock
-              in each warehouse.
-            </li>
-            <li class="list-group-item">
-              Product Categories: Organizational groups for products.
-            </li>
-            <li class="list-group-item">
-              Supplier: Companies or individuals who supply products to the
-              warehouse.
-            </li>
-            <li class="list-group-item">
-              Purchase: Records of purchases made from suppliers.
-            </li>
-            <li class="list-group-item">
-              Sale: Records of products sold to clients.
-            </li>
-            <li class="list-group-item">
-              Distributor: Entities responsible for distributing products to
-              clients or warehouses.
-            </li>
-            <li class="list-group-item">
-              Warehouse: Locations where products are stored.
-            </li>
-            <li class="list-group-item">
-              Equipment: Tools or machinery used in the warehouse.
-            </li>
-          </ul>
+            <hr class="my-4">
+            <h2 class="text-center mb-3">Collections:</h2>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Users: Owners or administrators who can log in and manage the system.</li>
+                <li class="list-group-item">Clients: Customers or clients who purchase products from the warehouse.</li>
+                <li class="list-group-item">Employees: Workers in the warehouse.</li>
+                <li class="list-group-item">Products: Items stocked in the warehouse.</li>
+                <li class="list-group-item">Inventory: A detailed record of the quantity of products in stock in each warehouse.</li>
+                <li class="list-group-item">Product Categories: Organizational groups for products.</li>
+                <li class="list-group-item">Suppliers: Companies or individuals who supply products to the warehouse.</li>
+                <li class="list-group-item">Purchases: Records of purchases made from suppliers.</li>
+                <li class="list-group-item">Sales: Records of products sold to clients.</li>
+                <li class="list-group-item">Distributors: Entities responsible for distributing products to clients or warehouses.</li>
+                <li class="list-group-item">Warehouses: Locations where products are stored.</li>
+                <li class="list-group-item">Equipments: Tools or machinery used in the warehouse.</li>
+            </ul>
         </div>
       </div>
     </main>
