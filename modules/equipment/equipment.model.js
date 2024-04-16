@@ -1,20 +1,20 @@
 (function () {
-    var mongoose = require('mongoose');
+  var mongoose = require("mongoose");
 
-    var Schema = mongoose.Schema;
+  var Schema = mongoose.Schema;
 
-    var EquipmentSchema = new Schema({
-        name: {
-            type: String,
-            required: true
-        },
-        description: String,
-        quantity: Number,
-        warehouseId: {
-            type: Schema.Types.ObjectId,
-            ref: 'Warehouse'
-        }
-    });
+  var EquipmentSchema = new Schema({
+    name: {
+      type: String,
+      required: true,
+    },
+    description: String,
+    quantity: Number,
+    warehouseId: {
+      type: String,
+      ref: "Warehouse",
+    },
+  });
 
-    module.exports = mongoose.model('equipments', EquipmentSchema);
+  module.exports = mongoose.model("equipments", EquipmentSchema);
 })();

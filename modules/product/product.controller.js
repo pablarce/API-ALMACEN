@@ -4,35 +4,35 @@
   var express = require("express");
   var router = express.Router();
 
-  var EmployeeMiddleware = require("./employees.module")().EmployeeMiddleware;
+  var ProductMiddleware = require("./product.module")().ProductMiddleware;
 
-  router.post("/", EmployeeMiddleware.addEmployee, function (req, res) {
+  router.post("/", ProductMiddleware.addProduct, function (req, res) {
     res.status(201).json(req.response);
   });
 
-  router.get("/", EmployeeMiddleware.getEmployees, function (req, res) {
+  router.get("/", ProductMiddleware.getProducts, function (req, res) {
     res.status(200).json(req.response);
   });
 
   router.get(
-    "/:employeeId",
-    EmployeeMiddleware.getEmployeeById,
+    "/:ProductId",
+    ProductMiddleware.getProductById,
     function (req, res) {
       res.status(200).json(req.response);
     }
   );
 
   router.put(
-    "/:employeeId",
-    EmployeeMiddleware.modifyEmployee,
+    "/:ProductId",
+    ProductMiddleware.modifyProduct,
     function (req, res) {
       res.status(200).json(req.response);
     }
   );
 
   router.delete(
-    "/:employeeId",
-    EmployeeMiddleware.removeEmployee,
+    "/:ProductId",
+    ProductMiddleware.removeProduct,
     function (req, res) {
       res.status(200).json(req.response);
     }

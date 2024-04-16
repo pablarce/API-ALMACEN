@@ -2,31 +2,34 @@
   "use strict";
 
   module.exports = {
-    createUser: createUser,
-    fetchUsers: fetchUsers,
-    fetchUserById: fetchUserById,
-    updateUser: updateUser,
-    deleteUser: deleteUser,
+    createEmployee: createEmployee,
+    fetchEmployees: fetchEmployees,
+    fetchEmployeeById: fetchEmployeeById,
+    updateEmployee: updateEmployee,
+    deleteEmployee: deleteEmployee,
   };
 
-  var UserModel = require("./employees.module")().UserModel;
-  function createUser(user) {
-    return UserModel.create(user);
+  var EmployeeModel = require("./employees.module")().EmployeeModel;
+
+  function createEmployee(employee) {
+    return EmployeeModel.create(employee);
   }
 
-  function fetchUsers() {
-    return UserModel.find({}).exec();
+  function fetchEmployees() {
+    return EmployeeModel.find({}).exec();
   }
 
-  function fetchUserById(userId) {
-    return UserModel.findById(userId).exec();
+  function fetchEmployeeById(employeeId) {
+    return EmployeeModel.findById(employeeId).exec();
   }
 
-  function updateUser(userId, user) {
-    return UserModel.findByIdAndUpdate(userId, user, { new: true }).exec();
+  function updateEmployee(employeeId, employee) {
+    return EmployeeModel.findByIdAndUpdate(employeeId, employee, {
+      new: true,
+    }).exec();
   }
 
-  function deleteUser(userId) {
-    return UserModel.findByIdAndRemove(userId).exec();
+  function deleteEmployee(employeeId) {
+    return EmployeeModel.findByIdAndRemove(employeeId).exec();
   }
 })();
