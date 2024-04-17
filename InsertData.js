@@ -41,64 +41,20 @@ async function isDatabaseEmpty() {
   return count === 0;
 }
 
+// Método para insertar los datos de los clientes en la base de datos
 async function insertData() {
   try {
-    // Insertar datos de warehouses
-    Object.keys(query.warehouse).forEach(wkey => {
-      console.log(wkey)
-      let mywarehouse = new Warehouse({
-        _id: new mongoose.Types.ObjectId(),
-        ID: query.warehouse[wkey].ID,
-        name:query.warehouse[wkey].name,
-        location: query.warehouse[wkey].location,
-        capacity: query.warehouse[wkey].capacity,
-        products: query.warehouse[wkey].products
-      });
-
-      warehouse.save().then(() => {
-          console.log("Warehouse data inserted successfully!");
-      }).catch((err) => {
-          console.log(err);
-      });
-  });
-
-  // Insertar datos de equipment
-  Object.keys(query.equipment).forEach(ekey => {
-    console.log(ekey)
-    let myequipment = new Warehouse({
-      _id: new mongoose.Types.ObjectId(),
-      ID: query.equipment[ekey].ID,
-      name:query.equipment[ekey].name,
-      description: query.equipment[ekey].description,
-      quantity: query.equipment[ekey].quantity,
-      warehouseId: query.equipment[ekey].warehouseId
-    });
-
-    equipment.save().then(() => {
-      console.log("Equipment data inserted successfully!");
-  }).catch((err) => {
-      console.log(err);
-  });
-});
-
-  // Insertar datos de distrinutor
-  Object.keys(query.distributor).forEach(dkey => {
-    console.log(dkey)
-    let mydistributor = new Warehouse({
-      _id: new mongoose.Types.ObjectId(),
-      ID: query.distributor[dkey].ID,
-      name:query.distributor[dkey].name,
-      location: query.distributor[dkey].location,
-      products: query.distributor[dkey].products
-    });
-
-    distributor.save().then(() => {
-      console.log("Distributor data inserted successfully!");
-  }).catch((err) => {
-      console.log(err);
-  });
-});
-
+    // Insertar los datos test en la base de datos
+    await Client.insertMany(clientsData);
+    await Sale.insertMany(salesData);
+    await Supplier.insertMany(suppliersData);
+    await Purchase.insertMany(purchasesData);
+    await User.insertMany(usersData);
+    await Distributor.insertMany(distributorData);
+    await Equipment.insertMany(equipmentData);
+    await Warehouse.insertMany(warehouseData);
+    await Employee.insertMany(employeesData);
+    await Product.insertMany(productData);
   } catch (error) {
     console.error("Error inserting test data into the database:", error);
   } finally {

@@ -79,6 +79,86 @@ const productData = [
     description:
       "Amazon Echo Dot (4th Gen) smart speaker with Alexa voice control and improved sound quality.",
   },
+  {
+    product_name: "LG OLED TV",
+    stock: 20,
+    price: 1999.99,
+    type: "Electronics",
+    description:
+      "LG OLED TV with 4K resolution, HDR, and Smart TV capabilities for immersive entertainment.",
+  },
+  {
+    product_name: "Bose QuietComfort Earbuds",
+    stock: 40,
+    price: 299.99,
+    type: "Electronics",
+    description:
+      "Bose QuietComfort Earbuds with noise-canceling technology and up to 6 hours of battery life.",
+  },
+  {
+    product_name: "Microsoft Surface Pro 7",
+    stock: 35,
+    price: 1299.99,
+    type: "Electronics",
+    description:
+      "Microsoft Surface Pro 7 tablet with detachable keyboard, Intel Core i5 processor, and Windows 10 OS.",
+  },
+  {
+    product_name: "Samsung QLED Q80T TV",
+    stock: 15,
+    price: 1599.99,
+    type: "Electronics",
+    description:
+      "Samsung QLED Q80T TV with Quantum Dot technology, 4K resolution, and Object Tracking Sound.",
+  },
+  {
+    product_name: "Apple AirPods Pro",
+    stock: 50,
+    price: 249.99,
+    type: "Electronics",
+    description:
+      "Apple AirPods Pro with active noise cancellation, transparency mode, and customizable fit.",
+  },
+  {
+    product_name: "iRobot Roomba i7+",
+    stock: 25,
+    price: 799.99,
+    type: "Electronics",
+    description:
+      "iRobot Roomba i7+ robot vacuum with automatic dirt disposal, smart mapping, and Alexa integration.",
+  },
+  {
+    product_name: "Dyson V11 Absolute",
+    stock: 30,
+    price: 599.99,
+    type: "Electronics",
+    description:
+      "Dyson V11 Absolute cordless vacuum cleaner with powerful suction, intelligent cleaning modes, and LCD screen.",
+  },
+  {
+    product_name: "Ninja Foodi Deluxe",
+    stock: 20,
+    price: 299.99,
+    type: "Electronics",
+    description:
+      "Ninja Foodi Deluxe pressure cooker and air fryer with multiple cooking functions and TenderCrisp technology.",
+  },
+  {
+    product_name: "Ecovacs Deebot N79S",
+    stock: 35,
+    price: 199.99,
+    type: "Electronics",
+    description:
+      "Ecovacs Deebot N79S robot vacuum cleaner with smart navigation, multiple cleaning modes, and app control.",
+  },
+  {
+    product_name: "Instant Pot Duo Evo Plus",
+    stock: 30,
+    price: 129.99,
+    type: "Electronics",
+    description:
+      "Instant Pot Duo Evo Plus electric pressure cooker with 10-in-1 cooking functions and easy-to-use controls.",
+  },
 ];
 
 module.exports = productData;
