@@ -44,13 +44,15 @@ async function isDatabaseEmpty() {
 async function insertData() {
   try {
     // Insertar datos de warehouses
-    Object.keys(query.warehouses).forEach(key => {
-      let warehouseData = query.warehouses[key];
-      let warehouse = new Warehouse({
-          name: warehouseData.name,
-          location: warehouseData.location,
-          capacity: warehouseData.capacity,
-          products: warehouseData.products
+    Object.keys(query.warehouse).forEach(wkey => {
+      console.log(wkey)
+      let mywarehouse = new Warehouse({
+        _id: new mongoose.Types.ObjectId(),
+        ID: query.warehouse[wkey].ID,
+        name:query.warehouse[wkey].name,
+        location: query.warehouse[wkey].location,
+        capacity: query.warehouse[wkey].capacity,
+        products: query.warehouse[wkey].products
       });
 
       warehouse.save().then(() => {
@@ -60,38 +62,42 @@ async function insertData() {
       });
   });
 
-  // Insertar datos de equipments
-  Object.keys(query.equipments).forEach(key => {
-      let equipmentData = query.equipments[key];
-      let equipment = new Equipment({
-          name: equipmentData.name,
-          description: equipmentData.description,
-          quantity: equipmentData.quantity,
-          warehouse: equipmentData.warehouse
-      });
+  // Insertar datos de equipment
+  Object.keys(query.equipment).forEach(ekey => {
+    console.log(ekey)
+    let myequipment = new Warehouse({
+      _id: new mongoose.Types.ObjectId(),
+      ID: query.equipment[ekey].ID,
+      name:query.equipment[ekey].name,
+      description: query.equipment[ekey].description,
+      quantity: query.equipment[ekey].quantity,
+      warehouseId: query.equipment[ekey].warehouseId
+    });
 
-      equipment.save().then(() => {
-          console.log("Equipment data inserted successfully!");
-      }).catch((err) => {
-          console.log(err);
-      });
+    equipment.save().then(() => {
+      console.log("Equipment data inserted successfully!");
+  }).catch((err) => {
+      console.log(err);
   });
+});
 
-  // Insertar datos de distrinutors
-  Object.keys(query.distributors).forEach(key => {
-      let distributorData = query.distributors[key];
-      let distributor = new Distributor({
-          name: distributorData.name,
-          location: distributorData.location,
-          products: distributorData.products
-      });
+  // Insertar datos de distrinutor
+  Object.keys(query.distributor).forEach(dkey => {
+    console.log(dkey)
+    let mydistributor = new Warehouse({
+      _id: new mongoose.Types.ObjectId(),
+      ID: query.distributor[dkey].ID,
+      name:query.distributor[dkey].name,
+      location: query.distributor[dkey].location,
+      products: query.distributor[dkey].products
+    });
 
-      distributor.save().then(() => {
-          console.log("Distributor data inserted successfully!");
-      }).catch((err) => {
-          console.log(err);
-      });
+    distributor.save().then(() => {
+      console.log("Distributor data inserted successfully!");
+  }).catch((err) => {
+      console.log(err);
   });
+});
 
   } catch (error) {
     console.error("Error inserting test data into the database:", error);
