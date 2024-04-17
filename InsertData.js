@@ -41,20 +41,58 @@ async function isDatabaseEmpty() {
   return count === 0;
 }
 
-// Método para insertar los datos de los clientes en la base de datos
 async function insertData() {
   try {
-    // Insertar los datos test en la base de datos
-    await Client.insertMany(clientsData);
-    await Sale.insertMany(salesData);
-    await Supplier.insertMany(suppliersData);
-    await Purchase.insertMany(purchasesData);
-    await User.insertMany(usersData);
-    await Distributor.insertMany(distributorData);
-    await Equipment.insertMany(equipmentData);
-    await Warehouse.insertMany(warehouseData);
-    await Employee.insertMany(employeesData);
-    await Product.insertMany(productData);
+    // Insertar datos de warehouses
+    Object.keys(query.warehouses).forEach(key => {
+      let warehouseData = query.warehouses[key];
+      let warehouse = new Warehouse({
+          name: warehouseData.name,
+          location: warehouseData.location,
+          capacity: warehouseData.capacity,
+          products: warehouseData.products
+      });
+
+      warehouse.save().then(() => {
+          console.log("Warehouse data inserted successfully!");
+      }).catch((err) => {
+          console.log(err);
+      });
+  });
+
+  // Insertar datos de equipments
+  Object.keys(query.equipments).forEach(key => {
+      let equipmentData = query.equipments[key];
+      let equipment = new Equipment({
+          name: equipmentData.name,
+          description: equipmentData.description,
+          quantity: equipmentData.quantity,
+          warehouse: equipmentData.warehouse
+      });
+
+      equipment.save().then(() => {
+          console.log("Equipment data inserted successfully!");
+      }).catch((err) => {
+          console.log(err);
+      });
+  });
+
+  // Insertar datos de distrinutors
+  Object.keys(query.distributors).forEach(key => {
+      let distributorData = query.distributors[key];
+      let distributor = new Distributor({
+          name: distributorData.name,
+          location: distributorData.location,
+          products: distributorData.products
+      });
+
+      distributor.save().then(() => {
+          console.log("Distributor data inserted successfully!");
+      }).catch((err) => {
+          console.log(err);
+      });
+  });
+
   } catch (error) {
     console.error("Error inserting test data into the database:", error);
   } finally {
