@@ -12,9 +12,6 @@
       type: String,
       required: true,
     },
-    warehouseId: {
-      type: String,
-    },
     capacity: Number,
   });
 
