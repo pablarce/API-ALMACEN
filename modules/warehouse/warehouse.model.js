@@ -11,9 +11,8 @@
     location: {
       type: String,
       required: true,
-    },
-    warehouseId: {
-      type: String,
+    },warehouseId: {
+      type: Number,
     },
     capacity: Number,
   });
