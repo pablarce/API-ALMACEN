@@ -4,16 +4,13 @@
     var Schema = mongoose.Schema;
 
     var PurchaseSchema = new Schema({
-        purchaseId: {
-            type: Number,
-            required: true
-        },
+        
         clientId: {
-            type: Number,
+            type: String,
             required: true
         },
         supplierId: {
-            type: Number,
+            type: String,
             required: true
         },
         items: [{
