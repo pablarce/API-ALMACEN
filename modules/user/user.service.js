@@ -7,6 +7,7 @@
     fetchUserById: fetchUserById,
     updateUser: updateUser,
     deleteUser: deleteUser,
+    authenticateUser: authenticateUser,
   };
 
   var UserModel = require("./user.module")().UserModel;
@@ -24,6 +25,34 @@
 
   function updateUser(userId, user) {
     return UserModel.findByIdAndUpdate(userId, user, { new: true }).exec();
+  }
+
+  async function authenticateUser(username, password) {
+    try {
+      // Buscar el usuario por nombre de usuario
+      const user = await UserModel.findOne({ username })
+        .select("+password")
+        .exec();
+
+      if (!user) {
+        // El usuario no fue encontrado
+        return null;
+      }
+
+      // Comparar la contraseña proporcionada con la contraseña almacenada
+      const isPasswordValid = await user.comparePassword(password);
+
+      if (!isPasswordValid) {
+        // La contraseña no coincide
+        return null;
+      }
+
+      // Devolver el usuario encontrado
+      return user;
+    } catch (error) {
+      // Manejar cualquier error de la base de datos
+      throw new Error("Authentication failed");
+    }
   }
 
   function deleteUser(userId) {

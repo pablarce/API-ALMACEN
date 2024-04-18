@@ -20,7 +20,6 @@ const suppliersData = [
     phoneNumber: "5555555555",
     category: "Alimentos",
   },
-  // Nuevos proveedores
   {
     name: "Proveedor A",
     type: "individual",

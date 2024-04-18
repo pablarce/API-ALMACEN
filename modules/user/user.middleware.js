@@ -7,6 +7,7 @@
     getUserById: getUserById,
     modifyUser: modifyUser,
     removeUser: removeUser,
+    authenticateUser: authenticateUser,
   };
 
   var UserService = require("./user.module")().UserService;
@@ -76,5 +77,31 @@
     function error(err) {
       next(err);
     }
+  }
+
+  function authenticateUser(req, res, next) {
+    const { username, password } = req.body;
+
+    if (!username || !password) {
+      return res
+        .status(400)
+        .json({ message: "Username and password are required" });
+    }
+
+    UserService.authenticateUser(username, password)
+      .then((user) => {
+        if (!user) {
+          return res.status(401).json({
+            message: "Authentication failed. Invalid username or password",
+          });
+        }
+
+        // Attach user to request object for use in subsequent middleware
+        req.user = user;
+        next();
+      })
+      .catch((error) => {
+        next(error);
+      });
   }
 })();

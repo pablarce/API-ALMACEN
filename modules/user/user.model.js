@@ -19,10 +19,16 @@ var UserSchema = new Schema({
   email: {
     type: String,
     required: true,
+    unique: true,
+    lowercase: true,
+    trim: true,
   },
   username: {
     type: String,
     required: true,
+    unique: true,
+    lowercase: true,
+    trim: true,
   },
   organization: {
     type: String,
@@ -31,28 +37,34 @@ var UserSchema = new Schema({
   password: {
     type: String,
     required: true,
+    select: false,
   },
   country: String,
 });
 
 // Antes de guardar el usuario, hashea la contraseña si es nueva o ha sido modificada
-UserSchema.pre("save", function (next) {
-  var user = this;
-  if (!user.isModified("password")) return next();
+UserSchema.pre("save", async function (next) {
+  // Solo hashear la contraseña si ha sido modificada
+  if (!this.isModified("password")) return next();
 
-  // Genera un salt para hashear la contraseña
-  bcrypt.genSalt(10, function (err, salt) {
-    if (err) return next(err);
+  try {
+    // Genera un salt para hashear la contraseña
+    const salt = await bcrypt.genSalt(10);
 
     // Hashea la contraseña utilizando el salt
-    bcrypt.hash(user.password, salt, function (err, hash) {
-      if (err) return next(err);
+    const hashedPassword = await bcrypt.hash(this.password, salt);
 
-      // Reemplaza la contraseña sin hashear con la contraseña hasheada
-      user.password = hash;
-      next();
-    });
-  });
+    // Reemplaza la contraseña sin hashear con la contraseña hasheada
+    this.password = hashedPassword;
+    next();
+  } catch (error) {
+    next(error);
+  }
 });
+
+// Método para comparar contraseñas
+UserSchema.methods.comparePassword = async function (password) {
+  return await bcrypt.compare(password, this.password);
+};
 
 module.exports = mongoose.model("User", UserSchema);

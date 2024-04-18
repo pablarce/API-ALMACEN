@@ -26,5 +26,15 @@
     res.status(200).json(req.response);
   });
 
+  router.post(
+    "/authenticate",
+    UserMiddleware.authenticateUser,
+    function (req, res) {
+      res
+        .status(200)
+        .json({ message: "Authentication successful", user: req.user });
+    }
+  );
+
   module.exports = router;
 })();

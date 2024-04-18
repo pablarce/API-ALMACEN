@@ -318,7 +318,7 @@ const productData = [
     type: "Kitchen Appliances",
     description:
       "KitchenAid Artisan Stand Mixer with 5-quart stainless steel bowl and 10-speed settings, perfect for baking and mixing.",
-  }
+  },
 ];
 
 module.exports = productData;
