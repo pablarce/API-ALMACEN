@@ -8,7 +8,7 @@ Para acceder al código del Front, pulse **_[aquí](https://github.com/pablarce/
 | ----------- | --------------- |
 | npm install | npm install     |
 | npm run dev | nodemon install |
-|             | nodeon start    |
+|             | nodemon start    |
 
 ## PROYECTO BASES DE DATOS
 
