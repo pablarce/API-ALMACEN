@@ -90,6 +90,42 @@ const distributorData = [
         city: "Bilbao",
         country: "España"
     },
+    {
+        name: "Distribuidora de Equipamiento Deportivo",
+        contactPerson: "Ana García",
+        email: "ana@gimnasiodeportivo.es",
+        phone: "+123456789",
+        address: "Calle Mayor, 1",
+        city: "Madrid",
+        country: "España"
+    },
+    {
+        name: "Distribuidora de Libros Culturales",
+        contactPerson: "Juan Martínez",
+        email: "juan@librosculturales.es",
+        phone: "+987654321",
+        address: "Avenida del Conocimiento, 2",
+        city: "Barcelona",
+        country: "España"
+    },
+    {
+        name: "Distribuidora de Muebles Modernos",
+        contactPerson: "María López",
+        email: "maria@mueblesmodernos.es",
+        phone: "+112233445",
+        address: "Calle Innovación, 3",
+        city: "Valencia",
+        country: "España"
+    },
+    {
+        name: "Distribuidora de Electrodomésticos CocinaFácil",
+        contactPerson: "Pedro Rodríguez",
+        email: "pedro@cocinafacil.es",
+        phone: "+998877665",
+        address: "Plaza del Sabor, 4",
+        city: "Sevilla",
+        country: "España"
+    }
 ];
 
 module.exports = distributorData;
