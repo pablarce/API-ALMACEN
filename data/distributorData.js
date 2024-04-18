@@ -1,93 +1,131 @@
-const distributorData=[
+const distributorData = [
     {
-        "name": "Distribuidora Internacional de Suministros Industriales",
-        "contactPerson": "Ana López",
-        "email": "info@disi.com",
-        "phone": "+123456789",
-        "address": "Calle de Serrano, 1",
-        "city": "Madrid",
-        "country": "España"
+        name: "ElectroSuministros S.A.",
+        contactPerson: "Ana López",
+        email: "info@electrosuministros.com",
+        phone: "+123456789",
+        address: "Calle de Serrano, 1",
+        city: "Madrid",
+        country: "España"
     },
     {
-        "name": "Distribuciones Rodríguez S.A.",
-        "contactPerson": "Javier Rodríguez",
-        "email": "ventas@rodriguezsa.com",
-        "phone": "+987654321",
-        "address": "Plaza de la Virgen, 1",
-        "city": "Valencia",
-        "country": "España"
+        name: "Electrónica Rodríguez",
+        contactPerson: "Javier Rodríguez",
+        email: "ventas@electronica-rodriguez.com",
+        phone: "+987654321",
+        address: "Plaza de la Virgen, 1",
+        city: "Valencia",
+        country: "España"
     },
     {
-        "name": "Distribuidora de Electrónica y Tecnología Avanzada",
-        "contactPerson": "María Martínez",
-        "email": "info@deta.com",
-        "phone": "+112233445",
-        "address": "Calle de la Barceloneta, 1",
-        "city": "Barcelona",
-        "country": "España"
+        name: "Tecnología Avanzada S.L.",
+        contactPerson: "María Martínez",
+        email: "info@tecnologia-avanzada.com",
+        phone: "+112233445",
+        address: "Calle de la Barceloneta, 1",
+        city: "Barcelona",
+        country: "España"
     },
     {
-        "name": "Suministros Industriales López Hermanos",
-        "contactPerson": "David López",
-        "email": "ventas@lopezhermanos.com",
-        "phone": "+554433221",
-        "address": "Plaza Mayor, 1",
-        "city": "Salamanca",
-        "country": "España"
+        name: "Electrónica López Hermanos",
+        contactPerson: "David López",
+        email: "ventas@electronica-lopezhermanos.com",
+        phone: "+554433221",
+        address: "Plaza Mayor, 1",
+        city: "Salamanca",
+        country: "España"
     },
     {
-        "name": "Distribuidora de Materiales de Construcción García y Asociados",
-        "contactPerson": "Marta García",
-        "email": "ventas@garciayasociados.com",
-        "phone": "+998877665",
-        "address": "Paseo de Gracia, 1",
-        "city": "Barcelona",
-        "country": "España"
+        name: "Materiales Electrónicos García",
+        contactPerson: "Marta García",
+        email: "ventas@materiales-electronicos-garcia.com",
+        phone: "+998877665",
+        address: "Paseo de Gracia, 1",
+        city: "Barcelona",
+        country: "España"
+    },
+    
+    {
+        name: "Distribuidora de Electrónicos Martínez",
+        contactPerson: "José Martínez",
+        email: "jose.martinez@electronica-martinez.com",
+        phone: "+779988556",
+        address: "Avenida de la Constitución, 1",
+        city: "Sevilla",
+        country: "España"
     },
     {
-        "name": "Comercializadora Internacional de Productos Químicos",
-        "contactPerson": "Juan Pérez",
-        "email": "ventas@cipq.com",
-        "phone": "+112233445",
-        "address": "Calle Burgos, 12",
-        "city": "Santander",
-        "country": "España"
+        name: "Electrónica Castro Hermanos",
+        contactPerson: "Luis Castro",
+        email: "luis.castro@electronica-castrohermanos.com",
+        phone: "+889977665",
+        address: "Calle Mayor, 1",
+        city: "Granada",
+        country: "España"
     },
     {
-        "name": "Distribuidora de Productos Agropecuarios Sánchez e Hijos",
-        "contactPerson": "Pedro Sánchez",
-        "email": "pedro.sanchez@distrisanchez.com",
-        "phone": "+332211445",
-        "address": "Calle Mayor, 1",
-        "city": "Toledo",
-        "country": "España"
+        name: "Electrónica Ruiz y Cía.",
+        contactPerson: "Laura Ruiz",
+        email: "laura.ruiz@electronica-ruiz.com",
+        phone: "+123443322",
+        address: "Calle de la Plata, 1",
+        city: "Málaga",
+        country: "España"
     },
     {
-        "name": "Importadora de Maquinaria y Equipos Industriales Martínez y Cía.",
-        "contactPerson": "José Martínez",
-        "email": "jose.martinez@importmaq.com",
-        "phone": "+779988556",
-        "address": "Avenida de la Constitución, 1",
-        "city": "Sevilla",
-        "country": "España"
+        name: "ElectroSuministros Valladolid",
+        contactPerson: "Elena Sánchez",
+        email: "elena.sanchez@electrosuministros.com",
+        phone: "+556677889",
+        address: "Calle Mayor, 3",
+        city: "Valladolid",
+        country: "España"
     },
     {
-        "name": "Distribuidora de Artículos de Oficina y Papelería Castro Hermanos",
-        "contactPerson": "Luis Castro",
-        "email": "luis.castro@castrohermanos.com",
-        "phone": "+889977665",
-        "address": "Calle Mayor, 1",
-        "city": "Granada",
-        "country": "España"
+        name: "Electrónica Gómez e Hijos",
+        contactPerson: "Pablo Gómez",
+        email: "pablo.gomez@electronica-gomez.com",
+        phone: "+332211445",
+        address: "Avenida de la Luz, 12",
+        city: "Bilbao",
+        country: "España"
     },
     {
-        "name": "Distribuidora de Productos Alimenticios Ruiz y Cía.",
-        "contactPerson": "Laura Ruiz",
-        "email": "laura.ruiz@distribuiruiz.com",
-        "phone": "+123443322",
-        "address": "Calle de la Plata, 1",
-        "city": "Málaga",
-        "country": "España"
+        name: "Distribuidora de Equipamiento Deportivo",
+        contactPerson: "Ana García",
+        email: "ana@gimnasiodeportivo.es",
+        phone: "+123456789",
+        address: "Calle Mayor, 1",
+        city: "Madrid",
+        country: "España"
+    },
+    {
+        name: "Distribuidora de Libros Culturales",
+        contactPerson: "Juan Martínez",
+        email: "juan@librosculturales.es",
+        phone: "+987654321",
+        address: "Avenida del Conocimiento, 2",
+        city: "Barcelona",
+        country: "España"
+    },
+    {
+        name: "Distribuidora de Muebles Modernos",
+        contactPerson: "María López",
+        email: "maria@mueblesmodernos.es",
+        phone: "+112233445",
+        address: "Calle Innovación, 3",
+        city: "Valencia",
+        country: "España"
+    },
+    {
+        name: "Distribuidora de Electrodomésticos CocinaFácil",
+        contactPerson: "Pedro Rodríguez",
+        email: "pedro@cocinafacil.es",
+        phone: "+998877665",
+        address: "Plaza del Sabor, 4",
+        city: "Sevilla",
+        country: "España"
     }
 ];
+
 module.exports = distributorData;
