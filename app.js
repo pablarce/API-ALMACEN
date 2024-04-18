@@ -51,7 +51,7 @@ app.use("/warehouses", WarehouseController);
 app.use("/employees", EmployeeController);
 app.use("/products", ProductController);
 
-app.get("/", function (req, res) {
+app.get("/status", function (req, res) {
   var pkg = require(path.join(__dirname, "package.json"));
   res.json({
     name: pkg.name,
@@ -60,7 +60,7 @@ app.get("/", function (req, res) {
   });
 });
 
-app.get("/home", function (req, res) {
+app.get("/", function (req, res) {
   res.render("pages/index");
 });
 
