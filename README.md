@@ -1,15 +1,19 @@
 # Enlace para acceder al Front de la API-ALMACEN
-Para acceder al código del Front, pulse __*[aquí](https://github.com/pablarce/ALMACEN-FRONT.git)*__.
+
+Para acceder al código del Front, pulse **_[aquí](https://github.com/pablarce/ALMACEN-FRONT.git)_**.
 
 ## Instrucciones de instalación necesarias
-|      Front      |      Back      |
-|-----------------|----------------|
-| npm install     | npm install    |
-| npm run dev     | nodemon install|
-|                 | nodeon start   |
-# PROYECTO BASES DE DATOS
+
+| Front       | Back            |
+| ----------- | --------------- |
+| npm install | npm install     |
+| npm run dev | nodemon install |
+|             | nodeon start    |
+
+## PROYECTO BASES DE DATOS
 
 ### Colecciones de la API-ALMACEN
+
 - Users: Owners or administrators who can log in and manage the system.
 - Clients: Customers or clients who purchase products from the warehouse.
 - Employees: Workers in the warehouse.
