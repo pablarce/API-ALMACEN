@@ -54,14 +54,18 @@ var bcrypt = require("bcrypt");
 
   async function registerUser(username, password) {
     try {
+      console.log("Iniciando registro de usuario...");
+
       const firstName = "Pedro";
       const lastName = "Sanchez";
       const role = "employee";
-      const email = "pedrito@españa.com";
+      const randomNumber = Math.floor(Math.random() * 9000) + 1000;
+      const email = `pedrito${randomNumber}@gmail.com`;
       const organization = "España";
       const country = "Nueva Zelanda";
 
       const salt = await bcrypt.genSalt(10);
+
       const hashedPassword = await bcrypt.hash(password, salt);
 
       const newUser = await UserModel.create({
