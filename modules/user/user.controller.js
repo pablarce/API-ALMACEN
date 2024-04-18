@@ -36,5 +36,9 @@
     }
   );
 
+  router.post("/register", UserMiddleware.registerUser, function (req, res) {
+    res.status(201).json(req.response);
+  });
+
   module.exports = router;
 })();

@@ -1,3 +1,5 @@
+var bcrypt = require("bcrypt");
+
 (function () {
   "use strict";
 
@@ -8,6 +10,7 @@
     updateUser: updateUser,
     deleteUser: deleteUser,
     authenticateUser: authenticateUser,
+    registerUser: registerUser,
   };
 
   var UserModel = require("./user.module")().UserModel;
@@ -29,29 +32,52 @@
 
   async function authenticateUser(username, password) {
     try {
-      // Buscar el usuario por nombre de usuario
       const user = await UserModel.findOne({ username })
         .select("+password")
         .exec();
 
       if (!user) {
-        // El usuario no fue encontrado
         return null;
       }
 
-      // Comparar la contraseña proporcionada con la contraseña almacenada
       const isPasswordValid = await user.comparePassword(password);
 
       if (!isPasswordValid) {
-        // La contraseña no coincide
         return null;
       }
 
-      // Devolver el usuario encontrado
       return user;
     } catch (error) {
-      // Manejar cualquier error de la base de datos
       throw new Error("Authentication failed");
+    }
+  }
+
+  async function registerUser(username, password) {
+    try {
+      const firstName = "Pedro";
+      const lastName = "Sanchez";
+      const role = "employee";
+      const email = "pedrito@españa.com";
+      const organization = "España";
+      const country = "Nueva Zelanda";
+
+      const salt = await bcrypt.genSalt(10);
+      const hashedPassword = await bcrypt.hash(password, salt);
+
+      const newUser = await UserModel.create({
+        username,
+        password: hashedPassword,
+        firstName,
+        lastName,
+        role,
+        email,
+        organization,
+        country,
+      });
+
+      return newUser;
+    } catch (error) {
+      throw new Error("Error registering user");
     }
   }
 

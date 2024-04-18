@@ -8,6 +8,7 @@
     modifyUser: modifyUser,
     removeUser: removeUser,
     authenticateUser: authenticateUser,
+    registerUser: registerUser,
   };
 
   var UserService = require("./user.module")().UserService;
@@ -103,5 +104,16 @@
       .catch((error) => {
         next(error);
       });
+  }
+  async function registerUser(req, res, next) {
+    const { username, password } = req.body;
+
+    try {
+      const newUser = await UserService.registerUser(username, password);
+      req.response = newUser;
+      next();
+    } catch (error) {
+      next(error);
+    }
   }
 })();
