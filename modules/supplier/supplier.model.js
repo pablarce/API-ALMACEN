@@ -8,10 +8,6 @@
             type: String,
             required: true
         },
-        id: {
-            type: Number,
-            required: true
-        },
         type: {
             type: String,
             enum: ['company', 'individual'],
