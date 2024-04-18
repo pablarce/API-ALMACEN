@@ -5,8 +5,6 @@
 - Clients: Customers or clients who purchase products from the warehouse.
 - Employees: Workers in the warehouse.
 - Products: Items stocked in the warehouse.
-- Inventory: A detailed record of the quantity of products in stock in each warehouse.
-- Product Categories: Organizational groups for products.
 - Supplier: Companies or individuals who supply products to the warehouse.
 - Purchase: Records of purchases made from suppliers.
 - Sale: Records of products sold to clients.
